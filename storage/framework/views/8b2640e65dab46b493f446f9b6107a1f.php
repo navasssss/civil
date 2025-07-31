@@ -11,26 +11,26 @@
     <link href='//dnjs.cloudflare.com' rel='dns-prefetch' />
 
     <meta content='blogger' name='generator' />
-    <link href='{{ asset('favicon.ico') }}' rel='icon' type='image/x-icon' />
-    <link href='{{ url()->current() }}' rel='canonical' />
+    <link href='<?php echo e(asset('favicon.ico')); ?>' rel='icon' type='image/x-icon' />
+    <link href='<?php echo e(url()->current()); ?>' rel='canonical' />
     <meta
         content='Creative Magazine &amp;amp; News Blogger Premium Theme, With many new features and fully Customizble, Powerfull Admin Panel and High Quality Design.'
         name='description' />
-    <link href='{{ asset('logocolor.png') }}' rel='image_src' />
+    <link href='<?php echo e(asset('logocolor.png')); ?>' rel='image_src' />
     <!-- Metadata for Open Graph protocol. See http://ogp.me/. -->
     <meta content='en' property='og:locale' />
     <meta content='object' property='og:type' />
     <meta content='The Evident' property='og:title' />
-    <meta content='{{ url()->current() }}' property='og:url' />
+    <meta content='<?php echo e(url()->current()); ?>' property='og:url' />
     <meta
         content='The Evident is an English monthly magazine by the Department of Civilizational Studies, Darul Hasanath Islamic College, Kannadipparamba. It explores topics in religion, faith, theology, philosophy, history, and the culture of the Muslim Ummah.'
         property='og:description' />
     <meta content='The Evident' property='og:site_name' />
-    <meta content='{{ asset('logocolor.png') }}' property='og:image' />
-    <meta content='{{ asset('logocolor.png') }}' property='twitter:image' />
+    <meta content='<?php echo e(asset('logocolor.png')); ?>' property='og:image' />
+    <meta content='<?php echo e(asset('logocolor.png')); ?>' property='twitter:image' />
     <meta content='summary_large_image' name='twitter:card' />
     <meta content='The Evident' name='twitter:title' />
-    <meta content='{{ url()->current() }}' name='twitter:domain' />
+    <meta content='<?php echo e(url()->current()); ?>' name='twitter:domain' />
     <meta
         content='The Evident is an English monthly magazine by the Department of Civilizational Studies, Darul Hasanath Islamic College, Kannadipparamba. It explores topics in religion, faith, theology, philosophy, history, and the culture of the Muslim Ummah.'
         name='twitter:description' />
@@ -42,7 +42,7 @@
 
     <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109' />
     <meta name='google-adsense-platform-domain' content='blogspot.com' />
-    <link href='{{ asset('style.css') }}' rel='stylesheet' type='text/css' />
+    <link href='<?php echo e(asset('style.css')); ?>' rel='stylesheet' type='text/css' />
 </head>
 
 <body class='multiple noSide hasIE hasTE' data-category='Style'>
@@ -116,7 +116,7 @@
             <script type='text/javascript'>
                 var propData = {
 
-                    darkLogo: "{{ asset('logodark1.png') }}",
+                    darkLogo: "<?php echo e(asset('logodark1.png')); ?>",
 
                 }
             </script>
@@ -126,46 +126,28 @@
         <div class='offCanvas-inner'>
             <div class='canvas-1 section' id='canvas-1' name='offCanvas [mobile]'>
 
-                {{-- <div class='widget HTML' data-version='2' id='HTML10'>
-                    <div class='widget-heading'>
-                        <h3 class='title'>
-                            Latest
-                        </h3>
-                    </div>
-                    <div class='widget-content' data-fetch='sided-1[default]6'>
-                        <span class='loader'><i></i><i></i><i></i><i></i></span>
-                    </div>
-                </div> --}}
+                
 
                 <div class='widget LinkList' data-version='2' id='LinkList5'>
                     <ul class='list' role='navigation'>
-                        @foreach ($topCategories as $categ)
+                        <?php $__currentLoopData = $topCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categ): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li>
-                                <a href='{{ route('category.show', $categ->term) }}'>{{ ucfirst(trim($categ->term)) }}</a>
+                                <a href='<?php echo e(route('category.show', $categ->term)); ?>'><?php echo e(ucfirst(trim($categ->term))); ?></a>
 
                             </li>
-                        @endforeach
-                        <li><a href='{{ route('about') }}'>ABOUT US</a></li>
-                        <li><a href='{{ route('contact') }}'>CONTACT</a></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <li><a href='<?php echo e(route('about')); ?>'>ABOUT US</a></li>
+                        <li><a href='<?php echo e(route('contact')); ?>'>CONTACT</a></li>
                     </ul>
                 </div>
             </div>
             <div class='canvas-2 sidebar section' id='canvas-2' name='offCanvas [global]'>
-                {{-- <div class='widget HTML' data-version='2' id='HTML10'>
-                    <div class='widget-heading'>
-                        <h3 class='title'>
-                            Latest
-                        </h3>
-                    </div>
-                    <div class='widget-content' data-fetch='sided-1[default]6'>
-                        <span class='loader'><i></i><i></i><i></i><i></i></span>
-                    </div>
-                </div> --}}
+                
 
                 <div class='widget Image' data-version='2' id='Image1'>
                     <div class='widget-content hasLogo'>
-                        <a class='logo' href='{{ url('/') }}'>
-                            <img alt='The Evident' height='84' id='Image1_img' src='{{ asset('logocolor1.png') }}'
+                        <a class='logo' href='<?php echo e(url('/')); ?>'>
+                            <img alt='The Evident' height='84' id='Image1_img' src='<?php echo e(asset('logocolor1.png')); ?>'
                                 width='132' />
                         </a>
                         <ul data-option='{"phone": "+34 000 0000", "location": "Hong Kong 122, Pak Road"}'>
@@ -208,82 +190,24 @@
                         </ul>
                     </div>
                     <div class='widget Header' data-version='2' id='Header1'>
-                        <a class='logo' href='{{ url('/') }}'>
-                            <img alt='The Evident' height='84' src='{{ asset('logocolor1.png') }}' title='The Evident'
+                        <a class='logo' href='<?php echo e(url('/')); ?>'>
+                            <img alt='The Evident' height='84' src='<?php echo e(asset('logocolor1.png')); ?>' title='The Evident'
                                 width='132' />
                         </a>
                     </div>
                     <div class='widget LinkList' data-version='2' id='LinkList1'>
                         <ul class='cloud' role='navigation'>
-                            @foreach ($topCategories as $category)
+                            <?php $__currentLoopData = $topCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <li>
-                                    <a href='{{ route('category.show', $category->term) }}'>{{ ucfirst(trim($category->term)) }}
+                                    <a href='<?php echo e(route('category.show', $category->term)); ?>'><?php echo e(ucfirst(trim($category->term))); ?>
+
                                     </a>
 
                                 </li>
-                            @endforeach
-                            <li><a href='{{ route('about') }}'>ABOUT US</a></li>
-                            <li><a href='{{ route('contact') }}'>CONTACT</a></li>
-                            {{-- <li class='hasMega'>
-                                <a href='/search/label/Topics'>Topics</a>
-                                <ul class='widget-content' data-fetch='mega-1[Living,Food]4'></ul>
-                            </li>
-                            <li class='hasMega'>
-                                <a href='/search/label/Picked'>Picked</a>
-                                <ul class='widget-content' data-fetch='mega-2[Gadget,Style]'></ul>
-                            </li>
-                            <li class='hasMega'>
-                                <a href='/search/label/Style'>Style</a>
-                                <ul class='widget-content' data-fetch='mega-2[Style]4'></ul>
-                            </li>
-                            <li>
-                                <a href='#'>Explore</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>_LIVING</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Education</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Style</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Parenting</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>_ARTS</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Theatre</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Movies</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Music</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>_SPORTS</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Football</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Tennis</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Basketball</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>_CITIES</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Hong Kong</a>
-                            </li>
-                            <li class='subItem'>
-                                <a href='#'>__Istanbul</a>
-                            </li> --}}
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <li><a href='<?php echo e(route('about')); ?>'>ABOUT US</a></li>
+                            <li><a href='<?php echo e(route('contact')); ?>'>CONTACT</a></li>
+                            
                         </ul>
                     </div>
                     <div class='widget LinkList' data-type='iconList' data-version='2' id='LinkList7'>
@@ -324,73 +248,75 @@
                     <div class='layout-3 section' id='layout-3' name='Main Layout'>
                         <div class='widget Blog' data-version='2' id='Blog1'>
                             <div class='widget-heading'>
-                                <h3 class='queryInfo queryLabel querySuccess'>{{ strtoupper($category->term) }} </h3>
-                                <span style="margin-left: 15px"> - Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</span>
+                                <h3 class='queryInfo queryLabel querySuccess'><?php echo e(strtoupper($category->term)); ?> </h3>
+                                <span style="margin-left: 15px"> - Page <?php echo e($posts->currentPage()); ?> of <?php echo e($posts->lastPage()); ?></span>
                                 <hr>
                             </div>
                             <div class='widget-content grid-2 gridView'>
                                 <div class='posts'>
-                                    @foreach ($posts as $post)
-                                        <article class='post postOuter item-{{ $loop->index }}'>
+                                    <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <article class='post postOuter item-<?php echo e($loop->index); ?>'>
                                             <div class='postImage'>
-                                                <a href='{{ route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id]) }}'
-                                                    title='{{ $post->title }}'>
+                                                <a href='<?php echo e(route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id])); ?>'
+                                                    title='<?php echo e($post->title); ?>'>
                                                     <span class='hasImage '
-                                                        data-style='{{ asset($post->thumbnail_url) }}' style='background-image: url({{ asset($post->thumbnail_url) }});'>
+                                                        data-style='<?php echo e(asset($post->thumbnail_url)); ?>' style='background-image: url(<?php echo e(asset($post->thumbnail_url)); ?>);'>
                                                     
                                                     </span>
                                                 </a>
                                             </div>
                                             <div class='postDetails'>
-                                                <span class='postCat' data-cat='{{ $post->category->term ?? 'uncategorized' }}'>
-                                                    <a href='{{ route('category.show', ['category' => $post->category->term ?? 'uncategorized']) }}'>{{strtoupper($post->category->term)}}</a>
+                                                <span class='postCat' data-cat='<?php echo e($post->category->term ?? 'uncategorized'); ?>'>
+                                                    <a href='<?php echo e(route('category.show', ['category' => $post->category->term ?? 'uncategorized'])); ?>'><?php echo e(strtoupper($post->category->term)); ?></a>
                                                 </span>
                                                 <h3 class='postTitle'>
-                                                    <a href='{{ route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id]) }}'
+                                                    <a href='<?php echo e(route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id])); ?>'
                                                         rel='bookmark'
-                                                        title='{{ $post->title }}'>
-                                                        {{ $post->title}}
+                                                        title='<?php echo e($post->title); ?>'>
+                                                        <?php echo e($post->title); ?>
+
                                                     </a>
                                                 </h3>
-                                                <p class='postSnippet'>{{ \Illuminate\Support\Str::limit(strip_tags($post->content), 150) }}</p>
+                                                <p class='postSnippet'><?php echo e(\Illuminate\Support\Str::limit(strip_tags($post->content), 150)); ?></p>
                                                 <div class='postMeta'>
                                                     <div class='postAuthorAndTimestamp'>
                                                         <span class='authorImage'>
                                                             <span class='hasImage lazy'
-                                                                data-style='{{ asset($post->author->image_url) }}' style='background-image: url({{ asset($post->author->image_url) }});'></span>
+                                                                data-style='<?php echo e(asset($post->author->image_url)); ?>' style='background-image: url(<?php echo e(asset($post->author->image_url)); ?>);'></span>
                                                         </span>
                                                         <span class='postAuthorAndDate'>
                                                             <span class='postAuthor'>
-                                                                {{ $post->author->name ?? 'Civilization Hasanath' }}
+                                                                <?php echo e($post->author->name ?? 'Civilization Hasanath'); ?>
+
                                                             </span>
                                                             <span class='postDate'>
                                                                 <time class='published'
-                                                                   datetime='{{ $post->created_at->toISOString() }}'>{{ $post->created_at->diffForHumans() }}</time>
+                                                                   datetime='<?php echo e($post->created_at->toISOString()); ?>'><?php echo e($post->created_at->diffForHumans()); ?></time>
                                                             </span>
                                                         </span>
                                                     </div>
                                                     <span class='postReadMore'><a
-                                                            href='{{ route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id]) }}'>Keep
+                                                            href='<?php echo e(route('home.show', ['category' => $post->category->scheme ?? 'uncategorized', 'post' => $post->slug ?? $post->id])); ?>'>Keep
                                                             reading</a></span>
                                                 </div>
                                             </div>
                                         </article>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     
                                 </div>
                                 <div class='blogPager' id='blogPager'>
-                                    @if ($posts->hasMorePages())
+                                    <?php if($posts->hasMorePages()): ?>
                                     <a class='loadMore'
-                                        data-link='{{ $posts->nextPageUrl() }}'
-                                        href='{{ $posts->nextPageUrl() }}' role='button'>
+                                        data-link='<?php echo e($posts->nextPageUrl()); ?>'
+                                        href='<?php echo e($posts->nextPageUrl()); ?>' role='button'>
                                         More posts
                                     </a>
-                                    @else
+                                    <?php else: ?>
                                      <span class='noMore visible'>
                                         That's All
 
                                     </span>
-                                    @endif
+                                    <?php endif; ?>
                                     <span class='loading'>Loading&hellip;
                                         <span class='loader'><i></i><i></i><i></i><i></i></span></span>
                                    
@@ -449,7 +375,7 @@
                                 </span>
                                 <div class='postImage'>
                                     <a href='https://atlas-home2.blogspot.com/2022/09/winter-dressing-tips-when-it-really.html'
-                                        title='{{ $post->title }}'>
+                                        title='<?php echo e($post->title); ?>'>
                                         <span class='hasImage'
                                             data-style='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsPeLaPbZ2RdY92IrwtBLy_yiXcDpS7srsxGI9j98_djcOk8ddUt2jSqW-lGuyCMgFASBSjpkRJWttBrBAWD40_GfrH6-qycERnGGlaPXF4ga0NYDUrG_infvbS2NMF0MJpcemjB7zGqUBJgBjZr3IVFT99UBFymv-p2MnIy2JazFL2SKKO1-1Z6jfGQ/w72-h72-p-k-no-nu/fashion-n.jpg'></span>
                                     </a>
@@ -457,8 +383,8 @@
                                 <div class='postDetails'>
                                     <h3 class='postTitle'>
                                         <a href='https://atlas-home2.blogspot.com/2022/09/winter-dressing-tips-when-it-really.html'
-                                            title='{{ $post->title }}'>
-                                            {{ $post->title }}'>
+                                            title='<?php echo e($post->title); ?>'>
+                                            <?php echo e($post->title); ?>'>
                                         </a>
                                     </h3>
                                     <div class='postMeta'>
@@ -479,13 +405,7 @@
                     <div class='widget-content'>
                         <div class='posts'>
                             <div class='post item-0'>
-                                {{-- <div class='postImage'>
-                                    <a href='https://atlas-home2.blogspot.com/2022/09/will-humans-be-able-to-live-in-mars-in.html'
-                                        title='Will Humans be able to live in Mars in the future?'>
-                                        <span class='hasImage'
-                                            data-style='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKFip38ZV-s79_Wjt0TGI-O3KcLz7egeGgWp5IA5PVALZcnEFNuH9WZ3o9VFwdArjtYB4qSwZh39huEOgnMQDLU6ShNWpZn1napljB8Ev1KcnW0Qsb_3GptNlQAbbMmnut7B6-7nCoJPztBg_gyZY0vdllSCyE_0J7qB5z8aE5NTsD7hywcQ8I-uIJ_w/w72-h72-p-k-no-nu/Highcompressed_2057696496.jpg'></span>
-                                    </a>
-                                </div> --}}
+                                
                                 <div class="widget-content">
                                                 <ul class="list hasIcons">
                                                       <li class="hasIcon facebook">
@@ -545,19 +465,10 @@
             </div>
             <div class='footer-bottombar section' id='footer-bottombar' name='Footer Bottom Bar'>
                 <div class='widget Text' data-version='2' id='Text1'>
-                    All Rights Reserved by The Evident Monthly &#169; {{ date('Y') }}.
+                    All Rights Reserved by The Evident Monthly &#169; <?php echo e(date('Y')); ?>.
                 </div>
                 <div class='widget LinkList' data-type='iconList' data-version='2' id='LinkList4'>
-                    {{-- <ul class='cloud'>
-                        <li class='hasIcon facebook'>
-                            <a href='#' target='_blank'>
-                            </a>
-                        </li>
-                        <li class='hasIcon github'>
-                            <a href='#' target='_blank'>
-                            </a>
-                        </li>
-                    </ul> --}}
+                    
                 </div>
             </div>
         </div>
@@ -596,13 +507,13 @@
         }
     </script>
     <!-- Main Script -->
-    <script src="{{ asset('timeago.js') }}"></script>
-    <script src="{{ asset('locals.js') }}"></script>
-    <script src="{{ asset('sticky.js') }}"></script>
-    <script src="{{ asset('lazyload.js') }}"></script>
-    <script src="{{ asset('submenu.js') }}"></script>
-    <script src="{{ asset('ticker.js') }}"></script>
-    <script src="{{ asset('currdate.js') }}"></script>
+    <script src="<?php echo e(asset('timeago.js')); ?>"></script>
+    <script src="<?php echo e(asset('locals.js')); ?>"></script>
+    <script src="<?php echo e(asset('sticky.js')); ?>"></script>
+    <script src="<?php echo e(asset('lazyload.js')); ?>"></script>
+    <script src="<?php echo e(asset('submenu.js')); ?>"></script>
+    <script src="<?php echo e(asset('ticker.js')); ?>"></script>
+    <script src="<?php echo e(asset('currdate.js')); ?>"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const imgSpans = document.querySelectorAll('.hasImage');
@@ -653,4 +564,4 @@
     </script>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\civil2\civil\resources\views/category.blade.php ENDPATH**/ ?>
